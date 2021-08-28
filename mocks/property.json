@@ -1,0 +1,52 @@
+{
+    "code": 0,
+    "msg": "",
+    "data": [
+      {
+        "createdBy": "zhangsan@cyclone-robotics.com",
+        "createdTime": 1626166529967,
+        "displayName": "薪水",
+        "elementId": 68000000123,
+        "id": 68000000123,
+        "isDisplay": false,
+        "isSystem": false,
+        "statusType": "add",
+        "type": {
+          "decimalPrecision": 3,
+          "defaultValue": "emp`s salary",
+          "description": "emp`s salary",
+          "embeddedEntityKey": "emp",
+          "isPrimary": false,
+          "isUnique": false,
+          "length": 20,
+          "name": "salary",
+          "type": "bigdecimal"
+        },
+        "updatedBy": "lisi@cyclone-robotics.com",
+        "updatedTime": 1626166529967
+      },
+      {
+        "createdBy": "zhangsan@cyclone-robotics.com",
+        "createdTime": 1626166529967,
+        "displayName": "作息",
+        "elementId": 68000000124,
+        "id": 68000000124,
+        "isDisplay": true,
+        "isSystem": false,
+        "statusType": "published",
+        "type": {
+          "decimalPrecision": 3,
+          "defaultValue": "emp`s salary",
+          "description": "emp`s salary",
+          "embeddedEntityKey": "emp",
+          "isPrimary": false,
+          "isUnique": true,
+          "length": 20,
+          "name": "salary1",
+          "type": "bigdecimal"
+        },
+        "updatedBy": "lisi@cyclone-robotics.com",
+        "updatedTime": 1626166529967
+      }
+    ]
+}

@@ -1,0 +1,130 @@
+{
+    "code": 0,
+    "msg": "",
+    "data": {
+      "edges": [
+        {
+          "createdBy": "zhangsan@cyclone-robotics.com",
+          "createdTime": 1626166529967,
+          "description": "保存员工信息表111",
+          "displayName": "员工111",
+          "fromElementKey": "emp1",
+          "id": "680000001",
+          "name": "emp",
+          "nameSpace": "cyclone",
+          "statusType": "published",
+          "toElementKey": "emp2",
+          "type": 3,
+          "updatedBy": "lisi@cyclone-robotics.com",
+          "updatedTime": 1626166529967
+        },
+        {
+          "createdBy": "zhangsan@cyclone-robotics.com",
+          "createdTime": 1626166529967,
+          "description": "保存员工信息表222",
+          "displayName": "员工222",
+          "fromElementKey": "emp1",
+          "id": "680000002",
+          "name": "emp11",
+          "nameSpace": "cyclone",
+          "statusType": "add",
+          "toElementKey": "emp3",
+          "type": 3,
+          "updatedBy": "lisi@cyclone-robotics.com",
+          "updatedTime": 1626166529967
+        },
+        {
+          "createdBy": "zhangsan@cyclone-robotics.com",
+          "createdTime": 1626166529967,
+          "description": "保存员工信息表222",
+          "displayName": "员工444",
+          "fromElementKey": "emp1",
+          "id": "680000003",
+          "name": "emp22",
+          "nameSpace": "cyclone",
+          "statusType": "add",
+          "toElementKey": "emp3",
+          "type": 3,
+          "updatedBy": "lisi@cyclone-robotics.com",
+          "updatedTime": 1626166529967
+        },
+        {
+          "createdBy": "zhangsan@cyclone-robotics.com",
+          "createdTime": 1626166529967,
+          "description": "保存员工信息表222",
+          "displayName": "员工333",
+          "fromElementKey": "emp2",
+          "id": "680000004",
+          "name": "emp22",
+          "nameSpace": "cyclone",
+          "statusType": "add",
+          "toElementKey": "emp4",
+          "type": 3,
+          "updatedBy": "lisi@cyclone-robotics.com",
+          "updatedTime": 1626166529967
+        }
+      ],
+      "nodes": [
+        {
+          "createdBy": "zhangsan@cyclone-robotics.com",
+          "createdTime": 1626166529967,
+          "description": "保存员工信息表1",
+          "displayName": "员工1",
+          "fromElementKey": "emp2",
+          "id": "68000000123",
+          "name": "emp1",
+          "nameSpace": "cyclone",
+          "statusType": "published",
+          "toElementKey": "dept",
+          "type": 1,
+          "updatedBy": "lisi@cyclone-robotics.com",
+          "updatedTime": 1626166529967
+        },
+        {
+          "createdBy": "zhangsan@cyclone-robotics.com",
+          "createdTime": 1626166529967,
+          "description": "保存员工信息表2",
+          "displayName": "员工2",
+          "fromElementKey": "emp2",
+          "id": "68000000124",
+          "name": "emp2",
+          "nameSpace": "cyclone",
+          "statusType": "add",
+          "toElementKey": "dept",
+          "type": 1,
+          "updatedBy": "lisi@cyclone-robotics.com",
+          "updatedTime": 1626166529967
+        },
+        {
+          "createdBy": "zhangsan@cyclone-robotics.com",
+          "createdTime": 1626166529967,
+          "description": "保存员工信息表3",
+          "displayName": "员工3",
+          "fromElementKey": "emp3",
+          "id": "68000000125",
+          "name": "emp3",
+          "nameSpace": "cyclone",
+          "statusType": "add",
+          "toElementKey": "dept",
+          "type": 1,
+          "updatedBy": "lisi@cyclone-robotics.com",
+          "updatedTime": 1626166529967
+        },
+        {
+          "createdBy": "zhangsan@cyclone-robotics.com",
+          "createdTime": 1626166529967,
+          "description": "保存员工信息表4",
+          "displayName": "员工4",
+          "fromElementKey": "123",
+          "id": "68000000126",
+          "name": "emp4",
+          "nameSpace": "cyclone",
+          "statusType": "add",
+          "toElementKey": "12",
+          "type": 2,
+          "updatedBy": "lisi@cyclone-robotics.com",
+          "updatedTime": 1626166529967
+        }
+      ]
+    }
+}

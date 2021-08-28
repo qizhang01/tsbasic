@@ -1,0 +1,130 @@
+
+.inputComp{
+    .itemInput{
+        padding-bottom: 30px;
+        position: relative;
+        p{
+            color: #000000D9;
+        }
+        .showName{
+            span{
+                margin-right: 5px;
+            }
+        }
+        .error{
+            position: absolute;
+            left: 0;
+            bottom: 9px;
+            color: red;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+    }
+    
+}
+/* 颜色组件 */
+.colorComp{
+    margin-top: 3px;
+    width: fit-content;
+    .title{
+        font-size: 14px;
+        color: #000000D9;
+        height: 32px;
+        line-height: 32px;
+        display: inline-block;
+        margin-right: 12px;
+    }
+    .colorBox{
+        width: 22px;
+        height: 14px;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+    .colorPicker{
+        .ant-tooltip-inner{
+            padding: 0;
+            background-color: initial;
+            box-shadow: none;
+            color: initial;
+        }
+    }
+}
+.showField{
+    .title{
+        margin: 30px 0;
+    }
+    .typeList{
+        display: flex;
+        &>div{
+            flex: 1;
+            display: grid;
+            place-items:center center;
+            p{
+                margin-bottom: 0;
+            } 
+            .Entity{
+                margin-bottom: 12px;
+            }
+            .deEntity{
+                padding: 8px 20px;
+                border-radius: 4px;
+                background: #dddedf;
+            }
+        } 
+    }
+}
+
+/* 添加表单组件 addField */
+.addField{
+    width: 100%;
+    .addFieldTitle{
+        margin: 30px 0 20px;
+        display: flex;
+        justify-content: space-between;
+        .addFieldText{
+            display: flex;
+            align-items: center;
+            .addFieldLabel{
+                color:#000000D9;
+                margin-right: 5px;
+            }
+        }
+        .addFieldProto{
+            
+        }
+    }
+    .addFieldnoData{
+        padding: 25px 0 0 0;
+        display: grid;
+        place-content:center center;
+        margin-bottom: 30px;
+        .ant-empty{
+            margin: 0 0 20px 0;
+        }
+        button{
+            color: #999;
+            &:hover{
+                color: #1890ff;
+            }
+        }
+    }
+    .addFieldTableBody{
+        margin-bottom: 20px;
+        
+        .ant-table-tbody{
+            .edit{
+                margin-right: 10px;
+                cursor: pointer;
+                color: #1890ff;
+                font-size: 16px;
+            }
+            .delete{
+                cursor: pointer;
+                color: #1890ff;
+                font-size: 16px;
+            }
+        }
+    }
+    
+}

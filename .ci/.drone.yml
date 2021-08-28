@@ -1,0 +1,44 @@
+---
+kind: pipeline
+type: kubernetes
+name: build
+
+steps:
+  - name: build
+    image: nexus-docker.mycyclone.com/testdev/fe-base:latest
+    pull: always
+    commands:
+      - sh .ci/build.sh
+    environment:
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+    volumes:
+      - name: cache
+        path: /drone/src/node_modules
+  - name: docker-build
+    image: plugins/docker
+    settings:
+      config: "{\"auths\":{\"nexus-docker.mycyclone.com\":{\"auth\":\"dGVzdDp0ZXN0MTIzNA==\"}}}"
+      repo: nexus-docker.mycyclone.com/${DRONE_REPO}
+      tags: ${DRONE_COMMIT_SHA:0:8}
+      registry: nexus-docker.mycyclone.com
+      insecure: true
+      dockerfile: .ci/Dockerfile
+  #- name: deploy
+  #  image: nexus-docker.mycyclone.com/testdev/helm:latest
+  #  pull: always
+  #  commands:
+  #    - helm repo update
+  #    - helm upgrade testdev cyclone/test-dev-xl --install -n testdev --set ciVue.image.tag=${DRONE_COMMIT_SHA:0:8} --kube-token $TOKEN --atomic --cleanup-on-fail --reuse-values --kube-context prod
+  #  environment:
+  #    TOKEN:
+  #      from_secret: TOKEN
+trigger:
+  event:
+  - push
+  branch:
+  - master
+  - txy
+volumes:
+  - name: cache
+    host:
+      path: /data/node_modules/${DRONE_REPO_NAME}
