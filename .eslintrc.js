@@ -30,12 +30,14 @@ module.exports = {
             "version": "detect"
         }
     },
-    "plugins": ["@typescript-eslint", "react", "jsx-control-statements", "prettier"],
+    "plugins": ["@typescript-eslint", "react", "jsx-control-statements", "prettier","react-hooks"],
     "rules": {
         "prettier/prettier": 1,
         "no-extra-semi": 2, // 禁止不必要的分号
         "quotes": ['error', 'single'], // 强制使用单引号
         "no-unused-vars": 0, // 不允许未定义的变量
-        "jsx-control-statements/jsx-use-if-tag": 0
+        "jsx-control-statements/jsx-use-if-tag": 0,
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/rules-of-hooks": "error"
     }
 };

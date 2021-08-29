@@ -155,13 +155,7 @@ module.exports = merge(webpackConfig, {
         // 在js代码中能够使用环境变量(demo: process.env.NODE_ENV === 'production')
         // new webpack.DefinePlugin(env.stringified),
         // 忽略moment的国际化库
-        // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
-        new CopyWebpackPlugin([
-            {
-                from: "static",
-                to:  'build'
-            }
-        ])
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
     ],
     optimization: {}
 });
