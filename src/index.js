@@ -4,4 +4,5 @@ import App from './App'
 import "@static/reset.less";
 
 const rootElement = document.getElementById("root");
+
 ReactDOM.render(<App />, rootElement);
