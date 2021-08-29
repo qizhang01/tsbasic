@@ -60,6 +60,7 @@ module.exports = merge(webpackConfig, {
                             {
                                 loader: 'babel-loader',
                                 options: {
+                                    //倒序执行
                                     presets: [
                                         "@babel/preset-typescript",
                                         '@babel/preset-react',  // jsx支持
@@ -67,12 +68,22 @@ module.exports = merge(webpackConfig, {
                                         // "stage-3"                                       
                                         // ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 2 }] // 按需使用polyfill
                                     ],
+                                    //顺序执行
                                     plugins: [
                                         "babel-plugin-transform-typescript-metadata",
                                         '@babel/plugin-syntax-dynamic-import',
                                         ["@babel/plugin-proposal-decorators", { legacy: true }],
                                         ["import", { libraryName: "antd", libraryDirectory: "es", style: true }],
-                                        ['@babel/plugin-proposal-class-properties', { 'loose': false }],// class中的箭头函数中的this指向组件
+                                        ['@babel/plugin-proposal-class-properties', { 'loose': true }],// class中的箭头函数中的this指向组件
+                                        [
+                                            "@babel/plugin-transform-runtime", //抽取runtime, 避免重复打包进去
+                                            {
+                                              "corejs": 3,
+                                              "helpers": true,
+                                              "regenerator": true,
+                                              "useESModules": false
+                                            }
+                                        ],
                                     ],
                                     cacheDirectory: true // 加快编译速度
                                 }
@@ -152,10 +163,19 @@ module.exports = merge(webpackConfig, {
         // 在html模板中能够使用环境变量
         // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
         new InterpolateHtmlPlugin({ PUBLIC_URL: "/" }),
+
         // 在js代码中能够使用环境变量(demo: process.env.NODE_ENV === 'production')
         // new webpack.DefinePlugin(env.stringified),
+
         // 忽略moment的国际化库
-        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+
+        //假如你需要看最后的打包分析报告可以放开该配置
+        // new BundleAnalyzerPlugin({
+        //     analyzerMode: 'static',
+        //     openAnalyzer: false,
+        //     reportFilename: path.join(config.assetsRoot, './report.html')
+        // })
     ],
     optimization: {}
 });
