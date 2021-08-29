@@ -5,9 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const CopyWebpackPlugin = require('cp-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const config = require('./config');
-
 const APP_PATH = path.resolve(__dirname, '../src');
 
 // const bundleAnalyzerReport = argv.report;
@@ -73,7 +72,7 @@ module.exports = merge(webpackConfig, {
                                         '@babel/plugin-syntax-dynamic-import',
                                         ["@babel/plugin-proposal-decorators", { legacy: true }],
                                         ["import", { libraryName: "antd", libraryDirectory: "es", style: true }],
-                                        ['@babel/plugin-proposal-class-properties', { 'loose': true }],// class中的箭头函数中的this指向组件
+                                        ['@babel/plugin-proposal-class-properties', { 'loose': false }],// class中的箭头函数中的this指向组件
                                     ],
                                     cacheDirectory: true // 加快编译速度
                                 }
@@ -157,12 +156,12 @@ module.exports = merge(webpackConfig, {
         // new webpack.DefinePlugin(env.stringified),
         // 忽略moment的国际化库
         // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
-        // new CopyWebpackPlugin([
-        //     {
-        //         from: 'public',
-        //         ignore: ['index.html']
-        //     }
-        // ])
+        new CopyWebpackPlugin([
+            {
+                from: "static",
+                to:  'build'
+            }
+        ])
     ],
     optimization: {}
 });

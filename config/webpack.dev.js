@@ -25,7 +25,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
             },
             hash: false
         }),
-
         new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {

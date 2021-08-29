@@ -11,7 +11,6 @@ module.exports = {
 		port: 7777,
 		host: 'localhost',
 		// contentBase: path.join(__dirname, '../public'),
-		watchContentBase: true,
 		// compress: true,
 		// historyApiFallback: true,
 		hot: true,
@@ -24,12 +23,12 @@ module.exports = {
 		// 	ignored: /node_modules/
 		// },
 		proxy: {
-			"/api": {
-					target: "http://129.11.9.16:1000/",
-					secure: false,
-					changeOrigin: true,
-					pathRewrite:{'^/api': ''}
-			},
+			// "/api": {
+			// 		target: "http://129.11.9.16:1000/",
+			// 		secure: false,
+			// 		changeOrigin: true,
+			// 		pathRewrite:{'^/api': ''}
+			// },
 	  },
 	}
 };
